@@ -56,13 +56,23 @@
 </head>
 <body>
 
+<div class="top-nav">
+    <a href="#">Ehsan Lari</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+</div>
+
 <style>
-    /* Add styling for the top navigation links */
+    /* Styling for top navigation */
     .top-nav {
         display: flex;
         gap: 20px;
         padding: 10px 20px;
         background-color: #f0f0f0;
+        justify-content: center; /* Centers the items horizontally */
+        margin: 0 auto; /* Centers the navigation bar on the page */
+        width: fit-content; /* Adjusts the width to fit content */
+        border-radius: 8px; /* Adds a subtle border-radius for aesthetics */
     }
     .top-nav a {
         text-decoration: none;
@@ -70,45 +80,15 @@
         font-weight: bold;
     }
 
-    /* Dropdown menu styling */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        padding: 10px;
-        min-width: 200px;
-        z-index: 1;
-        border-radius: 5px;
-    }
-    .dropdown-content a {
-        color: black;
-        padding: 8px 16px;
-        text-decoration: none;
-        display: block;
-    }
-    .dropdown:hover .dropdown-content {
-        display: block;
+    /* Optional: Center the entire top navigation bar vertically and horizontally */
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
     }
 </style>
-
-<div class="top-nav">
-	<a href="#">Ehsan Lari</a>
-    <div class="dropdown">
-        <a href="#">Publications</a>
-        <div class="dropdown-content">
-            <a href="#">Paper 1: Title and Link</a>
-            <a href="#">Paper 2: Title and Link</a>
-            <a href="#">Paper 3: Title and Link</a>
-            <!-- Add more links to your papers here -->
-        </div>
-    </div>
-    <a href="#">Teaching</a>
-</div>
 
 <div class="profile-container">
     <div class="profile-header">
