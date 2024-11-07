@@ -56,6 +56,46 @@
 </head>
 <body>
 
+<style>
+    /* Add styling for the top navigation links */
+    .top-nav {
+        display: flex;
+        gap: 20px;
+        padding: 10px 20px;
+        background-color: #f0f0f0;
+    }
+    .top-nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+
+    /* Dropdown menu styling */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        min-width: 200px;
+        z-index: 1;
+        border-radius: 5px;
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
+
 <div class="profile-container">
     <div class="profile-header">
         <img src="https://ehsan-lari.github.io/images/profile_photo.jpg" alt="Ehsan Lari">
