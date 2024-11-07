@@ -3,58 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me - Ehsan Lari</title>
+    <title>Teaching</title>
     <style>
+        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
         }
-        .profile-container {
-            max-width: 800px;
-            margin: auto;
+
+        /* Title styling */
+        h1 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
-        .profile-header {
-            display: flex;
-            align-items: center;
-            padding: 20px;
+
+        /* Course title styling */
+        .course {
+            margin-bottom: 20px;
         }
-        .profile-header img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            margin-right: 20px;
+
+        .course-title {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
         }
-        .profile-header h1 {
-            margin: 0;
-            font-size: 24px;
+
+        .course-description {
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
-        .profile-header p {
-            margin: 5px 0;
-            color: gray;
-        }
-        .profile-links {
-            display: flex;
-            gap: 10px;
-            margin: 10px 0;
-        }
-        .profile-links a {
+
+        /* Link styling */
+        a {
+            color: #1a73e8;
             text-decoration: none;
-            color: black;
         }
-        .about-section {
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
+        a:hover {
+            text-decoration: underline;
         }
-        .about-section h2 {
-            margin-top: 0;
-        }
-        .about-section a {
-            color: #0073e6;
-            text-decoration: none;
+
+        /* Bullet styling */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
         }
     </style>
 </head>
-<body>
 
 <div class="top-nav">
     <a href="#">Ehsan Lari</a>
@@ -77,35 +73,25 @@
     }
 </style>
 
-<div class="profile-container">
-    <div class="profile-header">
-        <img src="https://ehsan-lari.github.io/images/profile_photo.jpg" alt="Ehsan Lari">
-        <div>
-            <h1>Ehsan Lari</h1>
-            <p>Ph.D. Candidate at NTNU</p>
-            <p>Trondheim, Norway</p>
-            <div class="profile-links">
-                <a href="https://www.linkedin.com/in/ehsanlari">LinkedIn</a> |
-                <a href="https://scholar.google.com/citations?hl=en&user=koESvS4AAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a> |
-		<a href="https://github.com/ehsan-lari">GitHub</a> |
-		<a href="https://ieeexplore.ieee.org/author/37086859253">IEEE</a> |
-            </div>
+<body>
+
+    <h1>Teaching Assistant at NTNU</h1>
+
+    <div class="course">
+        <div class="course-title">• Information, Computation and Communication (BS): Fall 2021, 2023</div>
+        <div class="course-description">
+            An introductory course in computation, communication, and information systems for all first-year students at EPFL.
         </div>
+        <a href="https://example.com/coursebook1" target="_blank">[Coursebook]</a>
     </div>
-    <div class="about-section">
-        <h2>About me</h2>
-        <p>
-            I am a PhD candidate at the Department of Electronic Systems (IES) at the Norwegian University of Science and Technology (NTNU).
-        </p>
-        <p>
-            My research is centered on the application of signal processing techniques to enhance the privacy, security, robustness, and efficiency of machine learning algorithms.
-        </p>
-        <p>
-            For more details, please find my <a href="https://ehsan-lari.github.io/files/CV__EhsanLari.pdf">CV here</a> (last updated November 2024).
-        </p>
-        <p>Contact: firstname [dot] lastname [at] ieee [dot] org </p>
+
+    <div class="course">
+        <div class="course-title">• Adaptation and Learning (MS): Spring 2022</div>
+        <div class="course-description">
+            This course covers the foundations of decision-making and learning from data theories, with practical applications.
+        </div>
+        <a href="https://example.com/coursebook2" target="_blank">[Coursebook]</a>
     </div>
-</div>
 
 </body>
 </html>
