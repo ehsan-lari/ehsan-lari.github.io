@@ -1,102 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ehsan Lari's Home Page</title>
-    <link rel="icon" href="https://ehsan-lari.github.io/images/EL_favicon.png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .profile-container {
-            max-width: 800px;
-            margin: auto;
-        }
-        .profile-header {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-        }
-        .profile-header img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            margin-right: 20px;
-        }
-        .profile-header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        .profile-header p {
-            margin: 5px 0;
-            color: gray;
-        }
-        .profile-links {
-            display: flex;
-            gap: 10px;
-            margin: 10px 0;
-        }
-        .profile-links a {
-            text-decoration: none;
-            color: black;
-        }
-        .about-section {
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-        .about-section h2 {
-            margin-top: 0;
-        }
-        .about-section a {
-            color: #0073e6;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Ehsan Lari - Homepage</title>
+  <link rel="icon" href="https://ehsan-lari.github.io/images/EL_favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Roboto&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for icons -->
+  <script defer src="static/fonts/fontawesome-free-6.7.2-web/js/fontawesome.min.js"></script>
+  <script defer src="static/fonts/fontawesome-free-6.7.2-web/js/brands.js"></script>
+  <script defer src="static/fonts/fontawesome-free-6.7.2-web/js/solid.js"></script>
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* BASIC STYLES */
+    body {
+      font-family: "Quicksand", "Roboto", sans-serif;
+      color: #333;
+      background-color: #fafafa;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+    h1, h2, h3, h4 {
+      font-family: "Quicksand", sans-serif;
+      margin-bottom: 0.5em;
+      color: #2c3e50;
+      line-height: 1.2;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+    nav .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    nav .nav-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    nav li {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    /* Nav scroll shrink effect */
+    .scrolled {
+      padding: 0.5rem !important;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      width: 100%;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(
+        135deg,
+        rgba(44, 62, 80, 0.9) 0%,
+        rgba(52, 152, 219, 0.9) 100%
+      );
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem;
+      margin-top: 60px; /* offset for fixed nav */
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    .hero .social-links a {
+      color: #fff;
+      font-size: 1.1rem;
+      margin: 0 0.7rem;
+      transition: color 0.3s ease;
+      font-weight: 600;
+    }
+    .hero .social-links a:hover {
+      color: #ffe580; /* lighter yellow on hover */
+    }
+    .profile-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin: 2rem 0 1rem 0;
+      object-fit: cover;
+      border: 3px solid #fff;
+      transition: transform 0.3s ease;
+    }
+    .profile-image:hover {
+      transform: scale(1.05);
+    }
+
+    /* MAIN CONTENT WRAPPER */
+    main {
+      max-width: 1100px;
+      width: 90%;
+      margin: 2rem auto;
+    }
+
+    /* CARD STYLE SHARED */
+    section {
+      background: #fff;
+    }
+    .card {
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+    }
+    .card h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    .card p {
+      margin-bottom: 1rem;
+      text-align: justify;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    /* INTERESTS SECTION */
+    .interests-card .interest-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .interests-card .badge {
+      display: inline-block;
+      background: #007bff;
+      color: #fff;
+      padding: 0.45rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .interests-card .badge:hover {
+      background: #005bbf;
+    }
+
+    /* EXPERIENCE SECTION - SINGLE COLUMN */
+    .experience-card .exp-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .experience-card .exp-item {
+      background-color: #fff;
+      padding: 1.2rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .experience-card .exp-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+    .experience-card .exp-item strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+      color: #2c3e50;
+      font-weight: 700;
+    }
+    .experience-card .date {
+      float: right;
+      font-weight: 600;
+      color: #555;
+    }
+
+    /* PUBLICATIONS SECTION - SINGLE COLUMN */
+    .pub-card-grid {
+      display: flex;
+      flex-direction: column; /* single column */
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .pub-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pub-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+    .pub-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+      font-weight: 700;
+    }
+    .pub-card .meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .pub-card .meta em {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #555;
+    }
+
+    /* Button styling for Paper/Code/Project links */
+    .pub-links {
+      margin-top: auto;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .pub-links a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff; /* text color on button */
+      background: #007bff; /* button background color */
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .pub-links a:hover {
+      background: #005bbf;
+    }
+    .pub-links a i {
+      font-size: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #666;
+      background: #fff;
+      font-weight: 400;
+    }
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      .profile-image {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<div class="top-nav">
-    <a href="index.html">Ehsan Lari</a>
-    <a href="publications.html">Publications</a>
-    <a href="research.html">Research</a>
-    <a href="teaching.html">Teaching</a>
-</div>
-
-<style>
-    /* Top navigation styling */
-    .top-nav {
-        display: flex;
-        gap: 20px;
-        padding: 10px 20px;
-        background-color: #f0f0f0;
-    }
-    .top-nav a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-    }
-</style>
-
-<div class="profile-container">
-    <div class="profile-header">
-        <img src="https://ehsan-lari.github.io/images/profile_photo.jpg" alt="Ehsan Lari">
-        <div>
-            <h1>Ehsan Lari</h1>
-            <p>Ph.D. Candidate at NTNU</p>
-            <p>Trondheim, Norway</p>
-            <div class="profile-links">
-                <a href="https://www.linkedin.com/in/ehsanlari">LinkedIn</a> |
-                <a href="https://scholar.google.com/citations?hl=en&user=koESvS4AAAAJ">Google Scholar</a> |
-		<a href="https://github.com/ehsan-lari">GitHub</a> |
-		<a href="https://ieeexplore.ieee.org/author/37086859253">IEEE</a> |
-		<a href="https://www.ntnu.edu/employees/ehsan.lari">NTNU</a>
-            </div>
-        </div>
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-content">
+      <div class="nav-title">Ehsan Lari</div>
+      <ul>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#research">Research Interests</a></li>
+        <li><a href="#publications">Publications</a></li>
+	<li><a href="#teaching">Teaching</a></li>
+      </ul>
     </div>
-    <div class="about-section">
-        <h2>About me</h2>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <header class="hero">
+    <img
+      src="static/images/me.png"
+      alt="Ehsan Lari profile picture"
+      class="profile-image"
+    />
+    <h1Ehsan Lari</h1>
+    <p>PhD Candidate<br>Department of Electronic Systems (IES)<br>Norwegian University of Science and Technology (NTNU)<br>Trondheim, Norway</p>
+    <div class="social-links">
+      <!-- Icons for Scholar, LinkedIn, GitHub, Twitter -->
+      <a href="https://scholar.google.com/citations?hl=en&user=koESvS4AAAAJ" target="_blank"
+        ><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a
+      >
+      <a href="https://www.linkedin.com/in/ehsanlari" target="_blank"
+        ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
+      >
+      <a href="https://github.com/ehsan-lari" target="_blank"
+        ><i class="fa-brands fa-github"></i> GitHub</a
+      >
+      <a href="https://ieeexplore.ieee.org/author/37086859253" target="_blank"
+        ><i class="fa-brands fa-ieee"></i> IEEE</a
+      >
+      <a href="https://www.ntnu.edu/employees/ehsan.lari" target="_blank"
+        ><i class="fa-brands fa-ntnu"></i> NTNU</a
+      >
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="card">
+      <h2>About Me</h2>
         <p>
             I am a PhD candidate at the Department of Electronic Systems (IES) at the Norwegian University of Science and Technology (NTNU).
         </p>
@@ -107,8 +390,178 @@
             For more details, please find my <a href="https://ehsan-lari.github.io/files/CV__EhsanLari.pdf">CV here</a> (last updated May 2025).
         </p>
         <p>Contact: firstname [dot] lastname [at] ieee [dot] org </p>
-    </div>
-</div>
+      <p>
+    </section>
 
+    <!-- ========== RESEARCH SECTION ========== -->
+    <section id="about" class="card">
+      <h2>Research Interests</h2>
+      <p>My main research interests are:</p>
+      <div class="interest-badges">
+        <span class="badge">Distributed and Federated Machine Learning</span>
+        <span class="badge">Privacy-Preserving Techniques</span>
+        <span class="badge">Signal Processing for Machine Learning</span>
+        <span class="badge">Recommender Systems</span>
+        <span class="badge">Machine Unlearning</span>
+      </div>
+    </section>
+
+    <!-- ========== PUBLICATIONS SECTION (SINGLE COLUMN) ========== -->
+    <section id="publications" class="card">
+      <h2>Publications</h2>
+      <div class="pub-card-grid">
+
+        <!-- Publication 1 -->
+        <div class="pub-card">
+          <h3>Resilience in Online Federated Learning: Mitigating Model-Poisoning Attacks via Partial Sharing</h3>
+          <div class="meta">
+            <p>
+              E. Lari, R. Arablouei, V. C. Gogineni, and S. Werner
+            </p>
+            <em>IEEE Transactions on Signal and Information Processing over Networks</em>
+          </div>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/document/10969081/" target="_blank">
+              <i class="fas fa-file-pdf"></i> Paper
+            </a>
+          </div>
+        </div>
+
+        <!-- Publication 2 -->
+        <div class="pub-card">
+          <h3>
+            Noise-Robust and Resource-Efficient ADMM-based Federated Learning for WLS Regression
+          </h3>
+          <div class="meta">
+            <p>E. Lari, R. Arablouei, V. C. Gogineni, and S. Werner</p>
+            <em>Under Review, Submitted to Elsevier Signal Processing, Preprint on ArXiv</em>
+          </div>
+          <div class="pub-links">
+            <a
+              href="https://arxiv.org/abs/2409.13451"
+              target="_blank"
+            >
+              <i class="fas fa-file-pdf"></i> Paper
+            </a>
+          </div>
+        </div>
+
+        <!-- Publication 3 -->
+        <div class="pub-card">
+          <h3>Privacy-Preserving Distributed Nonnegative Matrix Factorization</h3>
+          <div class="meta">
+            <p>E. Lari, R. Arablouei, and S. Werner</p>
+            <em>EUSIPCO 2024</em>
+          </div>
+          <div class="pub-links">
+            <a
+              href="https://ieeexplore.ieee.org/document/10715358/"
+              target="_blank"
+            >
+              <i class="fas fa-file-pdf"></i> Paper
+            </a>
+          </div>
+        </div>
+
+        <!-- Publication 4 -->
+        <div class="pub-card">
+          <h3>Distributed Maximum Consensus Over Noisy Links</h3>
+          <div class="meta">
+            <p>
+              E. Lari, R. Arablouei, N. K. D. Venkategowda, and S. Werner
+            </p>
+            <em>EUSIPCO 2024</em>
+          </div>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/document/10715478/" target="_blank">
+              <i class="fas fa-file-pdf"></i> Paper
+            </a>
+          </div>
+        </div>
+
+        <!-- Publication 5 -->
+        <div class="pub-card">
+          <h3>On The Resilience Of Online Federated Learning To Model Poisoning Attacks Through Partial Sharing</h3>
+          <div class="meta">
+            <p>
+              E. Lari, V. C. Gogineni, R. Arablouei, and S. Werner
+            </p>
+            <em>ICASSP 2024</em>
+          </div>
+          <div class="pub-links">
+            <a
+              href="https://ieeexplore.ieee.org/document/10447497/"
+              target="_blank"
+            >
+              <i class="fas fa-file-pdf"></i> Paper
+            </a>
+          </div>
+        </div>
+
+        <!-- Publication 6 -->
+        <div class="pub-card">
+          <h3>Continual local updates for federated learning with enhanced robustness to link noise</h3>
+          <div class="meta">
+            <p>
+              E. Lari, V. C. Gogineni, R. Arablouei, and S. Werner
+            </p>
+            <em>APSIPA 2023</em>
+          </div>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/document/10317446/" target="_blank">
+              <i class="fas fa-file-pdf"></i> Paper
+            </a>
+          </div>
+        </div>
+
+        <!-- Publication 7 -->
+        <div class="pub-card">
+          <h3>Resource-efficient federated learning robust to communication errors</h3>
+          <div class="meta">
+            <p>
+              E. Lari, V. C. Gogineni, R. Arablouei, and S. Werner
+            </p>
+            <em>SSP 2023</em>
+          </div>
+          <div class="pub-links">
+            <a
+              href="https://ieeexplore.ieee.org/document/10208024/"
+              target="_blank"
+            >
+              <i class="fas fa-file-pdf"></i> Paper
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TEACHING SECTION ========== -->
+    <section id="about" class="card">
+      <h2>Teaching</h2>
+      <div class="interest-badges">
+        <a
+ <span class="badge">Digital Signal Processing (TTT4120)</span> </a>
+        <span class="badge">Design of Integrated Circuits (TFE4152)</span>
+        <span class="badge">Estimation, Detection and Classification (TTT4275)</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>Ehsan Lari | Contact: firstname [dot] lastname [at] ieee [dot] org </p>
+  </footer>
+
+  <!-- JavaScript for Sticky Nav Shrink on Scroll -->
+  <script>
+    window.addEventListener("scroll", () => {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
 </body>
 </html>
