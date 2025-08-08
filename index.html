@@ -371,7 +371,7 @@
     body.dark-mode .card,
     body.dark-mode .pub-card {
       background: #1e1e1e;
-      color: #ddd;
+      color: #f0f0f0;
       box-shadow: 0 2px 5px rgba(255,255,255,0.02);
     }
     body.dark-mode .meta { color: #bbb; }
@@ -390,8 +390,8 @@
       font-weight: 600;
       transition: background 0.3s ease;
     }
-    body.dark-mode .badge { background: var(--badge-blue-dark); color: #000; }
-    body.dark-mode .badge:hover { background: #66b3ff; }
+    body.dark-mode .badge { background: #7daaf7; color: #000; }
+    body.dark-mode .badge:hover { background: #7daaf7; }
 
     /* footer */
     body.dark-mode footer { background: #1e1e1e; color: #bbb; }
@@ -402,10 +402,14 @@
     /* TOGGLE SWITCH (top-right inside nav) */
     .theme-switch {
       position: absolute;
-      right: 1rem;
+      right: 2rem;
       top: 50%;
       transform: translateY(-50%);
-      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: inherit;
+      font-size: 0.9rem
     }
     .switch {
       position: relative;
@@ -421,13 +425,13 @@
     .slider {
       position: absolute;
       cursor: pointer;
-      background-color: #eee;
+      background-color: #ded5d5;
       border-radius: 24px;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      transition: background-color 0.25s, box-shadow 0.25s;
+      transition: background-color 0.3s, box-shadow 0.3s;
     }
     .slider:before {
       content: "";
@@ -436,9 +440,9 @@
       width: 18px;
       left: 3px;
       bottom: 3px;
-      background-color: white;
+      background-color: black;
       border-radius: 50%;
-      transition: transform 0.25s;
+      transition: transform 0.35s;
       box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     }
     input:checked + .slider {
@@ -447,6 +451,7 @@
     }
     input:checked + .slider:before {
       transform: translateX(26px);
+      background-color: yellow;
     }
 
   </style>
@@ -466,6 +471,7 @@
 
       <!-- Light/Dark Toggle (top-right) -->
       <div class="theme-switch" aria-hidden="false">
+        <span id="theme-label">Light</span>
         <label class="switch" title="Toggle light/dark theme">
           <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
           <span class="slider"></span>
@@ -733,5 +739,31 @@
       }
     });
   </script>
+
+<script>
+const toggle = document.getElementById('theme-toggle');
+const label = document.getElementById('theme-label');
+const body = document.body;
+
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  body.className = savedTheme;
+  toggle.checked = savedTheme === 'dark-mode';
+  label.textContent = toggle.checked ? 'Dark' : 'Light';
+}
+
+toggle.addEventListener('change', () => {
+  if (toggle.checked) {
+    body.className = 'dark-mode';
+    label.textContent = 'Dark';
+    localStorage.setItem('theme', 'dark-mode');
+  } else {
+    body.className = 'light-mode';
+    label.textContent = 'Light';
+    localStorage.setItem('theme', 'light-mode');
+  }
+});
+</script>
+
 </body>
 </html>
