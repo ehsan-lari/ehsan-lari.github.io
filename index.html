@@ -411,6 +411,15 @@
       color: inherit;
       font-size: 0.9rem
     }
+    #theme-icon {
+    font-size: 1.6rem;
+    display: inline-block;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+    #theme-icon.spin {
+    transform: rotate(90deg);
+    opacity: 0.3;
+    }
     .switch {
       position: relative;
       display: inline-block;
@@ -471,7 +480,7 @@
 
       <!-- Light/Dark Toggle (top-right) -->
       <div class="theme-switch" aria-hidden="false">
-        <span id="theme-label">Light</span>
+        <span id="theme-icon">☀️</span>
         <label class="switch" title="Toggle light/dark theme">
           <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
           <span class="slider"></span>
@@ -742,26 +751,29 @@
 
 <script>
 const toggle = document.getElementById('theme-toggle');
-const label = document.getElementById('theme-label');
+const icon = document.getElementById('theme-icon');
 const body = document.body;
+
+function switchIcon(isDark) {
+  icon.classList.add('spin');
+  setTimeout(() => {
+    icon.textContent = isDark ? '🌙' : '☀️';
+    icon.classList.remove('spin');
+  }, 200);
+}
 
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   body.className = savedTheme;
   toggle.checked = savedTheme === 'dark-mode';
-  label.textContent = toggle.checked ? 'Dark' : 'Light';
+  icon.textContent = toggle.checked ? '🌙' : '☀️';
 }
 
 toggle.addEventListener('change', () => {
-  if (toggle.checked) {
-    body.className = 'dark-mode';
-    label.textContent = 'Dark';
-    localStorage.setItem('theme', 'dark-mode');
-  } else {
-    body.className = 'light-mode';
-    label.textContent = 'Light';
-    localStorage.setItem('theme', 'light-mode');
-  }
+  const dark = toggle.checked;
+  body.className = dark ? 'dark-mode' : 'light-mode';
+  localStorage.setItem('theme', body.className);
+  switchIcon(dark);
 });
 </script>
 
