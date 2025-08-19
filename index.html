@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="VY5cEPTTF49wSJvDli941B_UjH2luF6mmEKGWsah6cI" />
   <meta name="google-site-verification" content="O_Qp1OMziPxrDUdjTqlLOxS2z4gmOlf0cnl8XAi9QIo" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Google Fonts -->
   <link
@@ -327,6 +328,31 @@
       }
     }
 
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: inherit;
+  font-size: 1.6rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #7daaf7; /* matches your dark-mode accent */
+}
+
+.icon-img {
+  width: 25px;   /* adjust size */
+  height: 25px;
+  transition: transform 0.3s;
+}
+.icon-link:hover .icon-img {
+  transform: scale(1.2);
+}
+
     /* -----------------------------
        THEME (dark-mode overrides)
        ----------------------------- */
@@ -499,25 +525,12 @@
     <h1>Ehsan Lari</h1>
     <p>PhD Candidate<br>Department of Electronic Systems (IES)<br>Norwegian University of Science and Technology (NTNU)<br>Trondheim, Norway</p>
     <div class="social-links">
-      <!-- Icons for Scholar, LinkedIn, GitHub, Twitter -->
-      <a href="https://scholar.google.com/citations?hl=en&user=koESvS4AAAAJ" target="_blank"
-        ><i class="fa-solid fa-graduation-cap"></i>Google Scholar</a
-      >
-      <a href="https://www.linkedin.com/in/ehsanlari" target="_blank"
-        ><i class="fa-brands fa-linkedin"></i>LinkedIn</a
-      >
-      <a href="https://github.com/ehsan-lari" target="_blank"
-        ><i class="fa-brands fa-github"></i>GitHub</a
-      >
-      <a href="https://ieeexplore.ieee.org/author/37086859253" target="_blank"
-        ><i class="fa-brands fa-ieee"></i>IEEE</a
-      >
-      <a href="https://www.ntnu.edu/employees/ehsan.lari" target="_blank"
-        ><i class="fa-brands fa-ntnu"></i>NTNU</a
-      >
-      <a href="https://huggingface.co/ehsanlari" target="_blank"
-        ><i class="fa-brands fa-huggingface"></i>Hugging Face</a
-      >
+      <a href="https://scholar.google.com/citations?hl=en&user=koESvS4AAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+      <a href="https://www.linkedin.com/in/ehsanlari" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/ehsan-lari" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://ieeexplore.ieee.org/author/37086859253" target="_blank"></i>IEEE</a>
+      <a href="https://www.ntnu.edu/employees/ehsan.lari" target="_blank"></i>NTNU</a>
+      <a href="https://huggingface.co/ehsanlari" target="_blank"></i>Hugging Face</a>
     </div>
   </header>
 
