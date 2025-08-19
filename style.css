@@ -43,6 +43,7 @@
     }
     nav .nav-content {
       display: flex;
+	  flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       max-width: 1100px;
@@ -416,6 +417,7 @@
       top: 50%;
       transform: translateY(-50%);
       display: flex;
+	  flex-wrap: wrap;
       align-items: center;
       gap: 6px;
       color: inherit;
