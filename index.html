@@ -328,30 +328,30 @@
       }
     }
 
-.social-icons {
-  display: flex;
-  gap: 15px;
-  margin-top: 1rem;
-}
+	.social-icons {
+	  display: flex;
+	  gap: 15px;
+	  margin-top: 1rem;
+	}
 
-.social-icons a {
-  color: inherit;
-  font-size: 1.6rem;
-  transition: color 0.3s;
-}
+	.social-icons a {
+	  color: inherit;
+	  font-size: 1.6rem;
+	  transition: color 0.3s;
+	}
 
-.social-icons a:hover {
-  color: #7daaf7; /* matches your dark-mode accent */
-}
+	.social-icons a:hover {
+	  color: #7daaf7; /* matches your dark-mode accent */
+	}
 
-.icon-img {
-  width: 25px;   /* adjust size */
-  height: 25px;
-  transition: transform 0.3s;
-}
-.icon-link:hover .icon-img {
-  transform: scale(1.2);
-}
+	.icon-img {
+	  width: 25px;   /* adjust size */
+	  height: 25px;
+	  transition: transform 0.3s;
+	}
+	.icon-link:hover .icon-img {
+	  transform: scale(1.2);
+	}
 
     /* -----------------------------
        THEME (dark-mode overrides)
@@ -586,7 +586,7 @@
           </div>
           <div class="pub-links">
             <a href="https://ieeexplore.ieee.org/document/10969081/" target="_blank">
-              <i class="fas fa-file-pdf"></i>IEEEXplore
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" class="icon-img"></i>IEEEXplore
             </a>
           </div>
         </div>
@@ -605,7 +605,7 @@
               href="https://arxiv.org/abs/2409.13451"
               target="_blank"
             >
-              <i class="fas fa-file-pdf"></i>ArXiv
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" class="icon-img"></i>ArXiv
             </a>
           </div>
         </div>
@@ -622,7 +622,7 @@
               href="https://ieeexplore.ieee.org/document/10715358/"
               target="_blank"
             >
-              <i class="fas fa-file-pdf"></i>IEEEXplore
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" class="icon-img"></i>IEEEXplore
             </a>
           </div>
         </div>
@@ -638,7 +638,7 @@
           </div>
           <div class="pub-links">
             <a href="https://ieeexplore.ieee.org/document/10715478/" target="_blank">
-              <i class="fas fa-file-pdf"></i>IEEEXplore
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" class="icon-img"></i>IEEEXplore
             </a>
           </div>
         </div>
@@ -657,7 +657,7 @@
               href="https://ieeexplore.ieee.org/document/10447497/"
               target="_blank"
             >
-              <i class="fas fa-file-pdf"></i>IEEEXplore
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" class="icon-img"></i>IEEEXplore
             </a>
           </div>
         </div>
@@ -673,7 +673,7 @@
           </div>
           <div class="pub-links">
             <a href="https://ieeexplore.ieee.org/document/10317446/" target="_blank">
-              <i class="fas fa-file-pdf"></i>IEEEXplore
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" class="icon-img"></i>IEEEXplore
             </a>
           </div>
         </div>
@@ -692,7 +692,7 @@
               href="https://ieeexplore.ieee.org/document/10208024/"
               target="_blank"
             >
-              <i class="fas fa-file-pdf"></i>IEEEXplore
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" class="icon-img"></i>IEEEXplore
             </a>
           </div>
         </div>
@@ -700,14 +700,14 @@
     </section>
 
     <!-- ========== TEACHING SECTION ========== -->
-    <section id="teaching" class="card">
-      <h2>Teaching</h2>
-      <div class="interest-badges">
- 	<div class="badge">• Digital Signal Processing (TTT4120)</div><br>
-        <div class="badge">• Design of Integrated Circuits (TFE4152)</div><br>
-        <div class="badge">• Estimation, Detection and Classification (TTT4275)</div>
-      </div>
-    </section>
+<section id="teaching" class="card">
+  <h2>Teaching</h2>
+  <div class="interest-badges">
+    <a href="https://www.ntnu.edu/studies/courses/TTT4120" target="_blank" class="badge">• Digital Signal Processing (TTT4120)</a><br>
+    <a href="https://www.ntnu.edu/studies/courses/TFE4152" target="_blank" class="badge">• Design of Integrated Circuits (TFE4152)</a><br>
+    <a href="https://www.ntnu.edu/studies/courses/TTT4275" target="_blank" class="badge">• Estimation, Detection and Classification (TTT4275)</a>
+  </div>
+</section>
   </main>
 
   <!-- ========== FOOTER ========== -->
@@ -765,33 +765,33 @@
     });
   </script>
 
-<script>
-const toggle = document.getElementById('theme-toggle');
-const icon = document.getElementById('theme-icon');
-const body = document.body;
+	<script>
+	const toggle = document.getElementById('theme-toggle');
+	const icon = document.getElementById('theme-icon');
+	const body = document.body;
 
-function switchIcon(isDark) {
-  icon.classList.add('spin');
-  setTimeout(() => {
-    icon.textContent = isDark ? '🌙' : '☀️';
-    icon.classList.remove('spin');
-  }, 200);
-}
+	function switchIcon(isDark) {
+	  icon.classList.add('spin');
+	  setTimeout(() => {
+		icon.textContent = isDark ? '🌙' : '☀️';
+		icon.classList.remove('spin');
+	  }, 200);
+	}
 
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  body.className = savedTheme;
-  toggle.checked = savedTheme === 'dark-mode';
-  icon.textContent = toggle.checked ? '🌙' : '☀️';
-}
+	const savedTheme = localStorage.getItem('theme');
+	if (savedTheme) {
+	  body.className = savedTheme;
+	  toggle.checked = savedTheme === 'dark-mode';
+	  icon.textContent = toggle.checked ? '🌙' : '☀️';
+	}
 
-toggle.addEventListener('change', () => {
-  const dark = toggle.checked;
-  body.className = dark ? 'dark-mode' : 'light-mode';
-  localStorage.setItem('theme', body.className);
-  switchIcon(dark);
-});
-</script>
+	toggle.addEventListener('change', () => {
+	  const dark = toggle.checked;
+	  body.className = dark ? 'dark-mode' : 'light-mode';
+	  localStorage.setItem('theme', body.className);
+	  switchIcon(dark);
+	});
+	</script>
 
 </body>
 </html>
