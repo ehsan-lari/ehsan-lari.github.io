@@ -14,6 +14,15 @@ body {
   overflow-x: hidden;
   transition: background-color 0.3s, color 0.3s;
 }
+#particles-js {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-color: #0f172a;
+}
 a {
   color: #00509e;
   text-decoration: none;
@@ -85,7 +94,7 @@ nav li {
   );
   color: #2c3e50;
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 2.6rem 1rem;
   margin-top: 60px; /* offset for fixed nav */
   position: relative;
   overflow: hidden;
@@ -280,7 +289,7 @@ section {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 0.5rem 0.5rem;
   color: #666;
   background: #fff;
   font-weight: 400;
