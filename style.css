@@ -508,9 +508,7 @@ body.dark-mode .profile-image { border-color: var(--accent-blue-light); }
   font-size: 0.9rem
 }
 #theme-icon {
-font-size: 1.6rem;
-display: inline-block;
-transition: transform 0.4s ease, opacity 0.4s ease;
+display: none;
 }
 #theme-icon.spin {
 transform: rotate(90deg);
@@ -539,13 +537,19 @@ opacity: 0.3;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 .slider:before {
-  content: "";
+  content: "☀";
   position: absolute;
   height: 18px;
   width: 18px;
   left: 3px;
   bottom: 3px;
   background-color: black;
+  color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  line-height: 1;
   border-radius: 50%;
   transition: transform 0.35s;
   box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -557,4 +561,6 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(26px);
   background-color: yellow;
+  content: "☾";
+  color: #000;
 }
