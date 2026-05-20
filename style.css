@@ -58,6 +58,13 @@ nav .nav-content {
   margin: 0 auto;
   padding: 1rem;
 }
+nav .nav-scroll {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 nav .nav-title {
   font-size: 1.4rem;
   font-weight: 700;
@@ -344,14 +351,15 @@ footer p {
 /* RESPONSIVE */
 @media (max-width: 768px) {
 
-  /* Make the navbar horizontally scrollable on small screens */
-  nav .nav-content {
+  /* Make the navbar links/title horizontally scrollable on small screens */
+  nav .nav-scroll {
     flex-wrap: nowrap;
     justify-content: flex-start;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     gap: 1rem;
+    padding-right: 6.5rem; /* space for the fixed theme toggle */
   }
   nav .nav-title {
     white-space: nowrap;
@@ -365,12 +373,7 @@ footer p {
     white-space: nowrap;
   }
   nav .theme-switch {
-    position: static;
-    right: auto;
-    top: auto;
-    transform: none;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
+    right: 1rem;
   }
 
   .hero h1 {
