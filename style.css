@@ -359,7 +359,7 @@ footer p {
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     gap: 1rem;
-    padding-right: 0rem; /* space for the fixed theme toggle */
+    padding-right: 2rem; /* space for the fixed theme toggle */
   }
   nav .nav-title {
     white-space: nowrap;
@@ -497,7 +497,7 @@ body.dark-mode .profile-image { border-color: var(--accent-blue-light); }
 /* TOGGLE SWITCH (top-right inside nav) */
 .theme-switch {
   position: absolute;
-  right: 0rem;
+  right: 2rem;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
