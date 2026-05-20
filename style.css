@@ -497,7 +497,7 @@ body.dark-mode .profile-image { border-color: var(--accent-blue-light); }
 /* TOGGLE SWITCH (top-right inside nav) */
 .theme-switch {
   position: absolute;
-  right: 2rem;
+  right: 0rem;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
