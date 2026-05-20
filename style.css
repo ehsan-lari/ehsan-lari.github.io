@@ -359,7 +359,7 @@ footer p {
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     gap: 1rem;
-    padding-right: 6.5rem; /* space for the fixed theme toggle */
+    padding-right: 4rem; /* space for the fixed theme toggle */
   }
   nav .nav-title {
     white-space: nowrap;
