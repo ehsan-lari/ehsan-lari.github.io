@@ -286,6 +286,49 @@ section {
   font-size: 1rem;
 }
 
+/* Publications "Show more" dropdown */
+.pub-more {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+.pub-more-toggle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent-blue, #00509e);
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  width: fit-content;
+  align-self: center;
+}
+.pub-more-toggle:hover {
+  background: #005bbf;
+}
+.pub-more-toggle:focus-visible {
+  outline: 2px solid var(--accent-blue, #00509e);
+  outline-offset: 3px;
+}
+.pub-more-toggle::-webkit-details-marker {
+  display: none;
+}
+.pub-more-toggle::marker {
+  content: "";
+}
+.pub-more-toggle::after {
+  content: "▾";
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.pub-more[open] .pub-more-toggle::after {
+  content: "▴";
+}
+
 /* FOOTER */
 footer {
   text-align: center;
@@ -300,9 +343,36 @@ footer p {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  nav ul {
-	display: none;
+
+  /* Make the navbar horizontally scrollable on small screens */
+  nav .nav-content {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
   }
+  nav .nav-title {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  nav ul {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  nav li {
+    white-space: nowrap;
+  }
+  nav .theme-switch {
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+  }
+
   .hero h1 {
 	font-size: 2.3rem;
   }
@@ -397,6 +467,9 @@ body.dark-mode .meta { color: #bbb; }
 body.dark-mode .meta em { color: #bbb; }
 
 body.dark-mode .pub-links a { background: #7daaf7; color: #000; }
+body.dark-mode .pub-more-toggle { background: #7daaf7; color: #000; }
+body.dark-mode .pub-more-toggle:hover { filter: brightness(0.97); }
+body.dark-mode .pub-more-toggle:focus-visible { outline-color: var(--accent-blue-light, #7daaf7); }
 
 /* badges (covering both selectors) */
 .badge { /* keep original styling for light mode (if used outside .interests-card) */
