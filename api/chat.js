@@ -1,6 +1,6 @@
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const SYSTEM_PROMPT = `You are an AI assistant for Ehsan Lari, designed to help recruiters and hiring managers learn more about his qualifications.
 You should be professional, polite, and directly answer questions based ONLY on the following information. If a question is outside this scope, politely decline to answer.
@@ -83,16 +83,18 @@ export default async function handler(req, res) {
        return res.status(500).json({ error: 'GEMINI_API_KEY is not configured on the server.' });
     }
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: message,
-      config: {
-        systemInstruction: SYSTEM_PROMPT,
-        temperature: 0.2, // Low temperature for more factual responses
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.5-flash",
+      systemInstruction: SYSTEM_PROMPT,
+      generationConfig: {
+        temperature: 0.2,
       }
     });
 
-    return res.status(200).json({ text: response.text });
+    const result = await model.generateContent(message);
+    const responseText = result.response.text();
+
+    return res.status(200).json({ text: responseText });
   } catch (error) {
     console.error("Error calling Gemini API:", error);
     return res.status(500).json({ error: 'Failed to generate response' });
