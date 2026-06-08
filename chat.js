@@ -97,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollToBottom();
 
     try {
-      // Determine API URL (Works locally and on deployed Vercel)
-      const apiUrl = '/api/chat';
+      // Determine API URL (Absolute URL for GitHub Pages)
+      const apiUrl = 'https://ehsan-lari-github-io.vercel.app/api/chat';
       
       const response = await fetch(apiUrl, {
         method: 'POST',
