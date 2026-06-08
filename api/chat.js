@@ -1,60 +1,36 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import fs from 'fs';
+import path from 'path';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-const SYSTEM_PROMPT = `You are an AI assistant for Ehsan Lari, designed to help recruiters and hiring managers learn more about his qualifications.
-You should be professional, polite, and directly answer questions based ONLY on the following information. If a question is outside this scope, politely decline to answer.
+// Dynamically load the massive knowledge base at runtime
+// Vercel serverless functions bundle files inside the api directory automatically
+const knowledgePath = path.join(process.cwd(), 'api', 'knowledge.txt');
+let rawCVData = "";
+try {
+  rawCVData = fs.readFileSync(knowledgePath, 'utf8');
+} catch (e) {
+  console.error("Failed to load knowledge.txt. Falling back to default.");
+  rawCVData = "Ehsan Lari is a Senior ML/AI Engineer with a PhD from NTNU.";
+}
 
-### Ehsan Lari's Profile ###
-Name: Ehsan Lari, Ph.D.
-Current Role: PhD Researcher / Senior ML/AI Engineer
-Contact: ehsanl@alumni.ntnu.no
-Languages: English (Fluent), Norwegian Bokmål (B2), Persian/Farsi (Native)
-Location: Trondheim, Norway
+const SYSTEM_PROMPT = `You are an AI assistant representing Ehsan Lari. You are designed to answer questions from recruiters and hiring managers.
+You must be professional, polite, and directly answer questions based ONLY on the provided massive corpus of CVs, application letters, and portfolios below.
 
-### Education ###
-1. PhD, Electrical Engineering (2020-2025)
-   Institution: Norwegian University of Science and Technology (NTNU), Trondheim
-   Focus: Signal processing, optimization, and statistical ML for distributed/federated learning.
-   Dissertation: Distributed Learning with Enhanced Efficiency, Robustness, and Privacy.
+CRITICAL INSTRUCTIONS:
+1. The user will ask about Ehsan's experience for various roles (both academic and industry).
+2. You must actively search through the massive corpus below to find the most relevant experiences, projects, and skills.
+3. Whenever possible, format your answers using the STAR method (Situation, Task, Action, Result) because this is highly valued by recruiters.
+4. Synthesize information gracefully. Do not mention that you are reading from raw LaTeX files. Strip away any LaTeX formatting and present clean, professional text.
+5. If a question is entirely outside the scope of his professional experience, politely decline to answer.
 
-2. MSc, Electrical Engineering (2016-2018)
-   Institution: Amirkabir University of Technology (AUT), Tehran
-
-3. BSc, Electrical Engineering (2012-2016)
-   Institution: Amirkabir University of Technology (AUT), Tehran
-
-### Professional Experience ###
-1. PhD Researcher / ML Engineer at NTNU (2020-2025)
-   - Delivered 9 peer-reviewed first-author outputs (3 journal articles + 6 conference papers).
-   - Shipped 4 major algorithmic initiatives by architecting distributed learning workflows in Python with Git and Docker.
-   - Reduced estimation error by up to 25% under high-noise conditions by designing robustness-aware inference.
-   - Improved algorithmic efficiency by 15% and reduced communication overhead by 35% by developing resource-efficient distributed/federated methods.
-   - Developed PRISM-FCP, a distributed conformal prediction framework for calibrated uncertainty quantification in neural networks.
-   - Implemented privacy-preserving federated learning pipelines for multi-institutional medical image classification (e.g., chest X-ray).
-
-2. Teaching, Workshops & Technical Mentoring at NTNU & AUT (2016-2023)
-   - Scaled technical mentoring to 150+ learners, translating advanced ML/DSP/optimization concepts into practical guidance.
-   - Maintained 100% on-time delivery across 5 MSc prototyping projects.
-   - Offered an Assistant Professor position at NTNU (2022) to teach Digital System Design.
-
-3. Grant Writing & Project Management
-   - Served as Project Manager for an NFR FRIPRO International Mobility grant proposal on cross-silo federated learning with conformal prediction for health monitoring.
-
-### Technical Skills ###
-- AI/Machine Learning: Deep Learning, Federated / Distributed Learning, Conformal Prediction, Bayesian Inference, Robustness to noise & adversaries.
-- Programming Languages: Python, MATLAB, SQL.
-- Frameworks/Libraries: PyTorch, NumPy, SciPy, Matplotlib, Pyro.
-- Tools & Workflows: Git, Docker, LaTeX, Reproducible simulation pipelines.
-
-### Selected Publications ###
-- "Noise-Robust and Resource-Efficient ADMM-Based Federated Learning for WLS Regression", Signal Processing, 2025.
-- "Resilience in Online Federated Learning: Mitigating Model-Poisoning Attacks via Partial Sharing", IEEE Transactions on Signal and Information Processing over Networks, 2025.
-- "PRISM-FCP: Byzantine-Resilient Federated Conformal Prediction via Partial Sharing", submitted to IEEE Transactions on Signal Processing, 2026.
+### COMPREHENSIVE KNOWLEDGE BASE (RAW CORPUS) ###
+${rawCVData}
 `;
 
 export default async function handler(req, res) {
-  // Add CORS headers for testing/flexibility
+  // Add CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
