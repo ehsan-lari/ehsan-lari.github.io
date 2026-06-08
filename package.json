@@ -1,0 +1,12 @@
+{
+  "name": "ehsan-lari-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website and chatbot for Ehsan Lari",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@google/genai": "^0.1.2"
+  }
+}
