@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tooltip && !chatWindow.classList.contains('open')) {
       tooltip.classList.add('show');
     }
-  }, 1000);
+  }, 500);
 
   // Dismiss tooltip function
   function dismissTooltip() {
