@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Create chat widget HTML structure dynamically
   const chatHTML = `
+    <!-- Chatbot Tooltip -->
+    <div id="chatbot-tooltip" class="chatbot-tooltip">
+      Hi! I'm Ehsan's AI assistant. Ask me anything about his experience!
+      <button id="chatbot-tooltip-close" aria-label="Close Tooltip"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
     <!-- Floating Action Button -->
     <div id="chatbot-fab" aria-label="Open Chat">
       <i class="fa-solid fa-comment-dots"></i>
@@ -51,12 +57,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendBtn = document.getElementById('chat-send');
   const messagesContainer = document.getElementById('chat-messages');
   const typingIndicator = document.getElementById('typing-indicator');
+  const tooltip = document.getElementById('chatbot-tooltip');
+  const tooltipClose = document.getElementById('chatbot-tooltip-close');
+
+  // Show tooltip after a short delay
+  setTimeout(() => {
+    if (tooltip && !chatWindow.classList.contains('open') && !localStorage.getItem('chatbot-tooltip-dismissed')) {
+      tooltip.classList.add('show');
+    }
+  }, 3000);
+
+  // Dismiss tooltip function
+  function dismissTooltip() {
+    if (tooltip) {
+      tooltip.classList.remove('show');
+      localStorage.setItem('chatbot-tooltip-dismissed', 'true');
+    }
+  }
+
+  if (tooltipClose) {
+    tooltipClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dismissTooltip();
+    });
+  }
 
   // Toggle Chat Window
   function toggleChat() {
     chatWindow.classList.toggle('open');
     if (chatWindow.classList.contains('open')) {
       input.focus();
+      dismissTooltip();
     }
   }
 
