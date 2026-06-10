@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Show tooltip after a short delay
   setTimeout(() => {
-    if (tooltip && !chatWindow.classList.contains('open') && !localStorage.getItem('chatbot-tooltip-dismissed')) {
+    if (tooltip && !chatWindow.classList.contains('open')) {
       tooltip.classList.add('show');
     }
   }, 3000);
@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function dismissTooltip() {
     if (tooltip) {
       tooltip.classList.remove('show');
-      localStorage.setItem('chatbot-tooltip-dismissed', 'true');
     }
   }
 
