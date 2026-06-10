@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="chat-messages" id="chat-messages">
         <!-- Initial Bot Message -->
         <div class="chat-msg bot">
-          Hi! I'm an AI assistant trained on Ehsan Lari's CV. I'm here to help recruiters and hiring managers. What would you like to know about his experience or skills?
+          Hi! I'm an AI assistant trained on Ehsan's CV and I'm here to help you. What would you like to know about his experience or skills?
         </div>
         
         <!-- Typing Indicator -->
@@ -98,11 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function addMessage(text, sender) {
     const msgDiv = document.createElement('div');
     msgDiv.classList.add('chat-msg', sender);
-    
+
     // Convert basic markdown-like bold (optional) and line breaks to HTML
     const formattedText = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     msgDiv.innerHTML = formattedText;
-    
+
     // Insert before typing indicator
     messagesContainer.insertBefore(msgDiv, typingIndicator);
     scrollToBottom();
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       // Determine API URL (Absolute URL for GitHub Pages)
       const apiUrl = 'https://ehsan-lari-github-io.vercel.app/api/chat';
-      
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
