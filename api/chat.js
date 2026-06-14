@@ -56,11 +56,11 @@ export default async function handler(req, res) {
     }
 
     if (!process.env.GEMINI_API_KEY) {
-       return res.status(500).json({ error: 'GEMINI_API_KEY is not configured on the server.' });
+      return res.status(500).json({ error: 'GEMINI_API_KEY is not configured on the server.' });
     }
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-3.0-flash",
+      model: "gemini-3.1-flash",
       systemInstruction: SYSTEM_PROMPT,
       generationConfig: {
         temperature: 0.2,
