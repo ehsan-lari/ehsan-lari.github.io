@@ -30,7 +30,8 @@
         <div class="nav-title">Ehsan (Ethan) Lari</div>
         <ul>
           <li><a href="#about">About me</a></li>
-          <li><a href="#research">Research Interests</a></li>
+          <li><a href="#research">Interests</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#publications">Publications</a></li>
           <li><a href="#teaching">Teaching</a></li>
         </ul>
@@ -88,8 +89,8 @@
 
     <!-- ========== RESEARCH SECTION ========== -->
     <section id="research" class="card">
-      <h2>Research Interests</h2>
-      <p>My main research interests are:</p>
+      <h2>Interests</h2>
+      <p>My main interests are:</p>
       <div class="interest-badges">
         <div class="badge">• Distributed and Federated Machine Learning</div><br>
         <div class="badge">• Applications of Signal Processing in Machine Learning</div><br>
@@ -100,7 +101,69 @@
         <!--<div class="badge">• Recommender Systems</div><br>-->
       </div>
     </section>
-	
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section id="projects" class="card">
+      <h2>Projects</h2>
+      <div class="pub-card-grid">
+
+        <!-- NorwayTravelGuide -->
+        <div class="pub-card">
+          <h3>Norway Travel Guide</h3>
+          <div class="meta">
+            <p>Cloud-deployed FastAPI and React application with automated validation and scoring</p>
+          </div>
+          <p>
+            A travel decision platform that integrates real-time weather observations and forecast streams from MET Norway REST APIs with transit routing from Entur. Features automated schema validation, missing-data imputation, multi-criteria scoring algorithms, and AI-generated summaries using Gemini.
+          </p>
+          <div class="pub-links">
+            <a href="https://norway-travel-guide.vercel.app" target="_blank">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>&nbsp;Live Service
+            </a>
+            <a href="https://github.com/ehsan-lari/NorwayTravelGuide" target="_blank">
+              <i class="fa-brands fa-github"></i>&nbsp;GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- PSFed -->
+        <div class="pub-card">
+          <h3>PSFed: Partial Model Sharing for Federated Learning</h3>
+          <div class="meta">
+            <p>Open-source Python library published on PyPI with CI/CD automation</p>
+          </div>
+          <p>
+            A modular Python library designed for distributed machine learning with selective parameter sharing. Reduces per-cycle network data transfer by 50% to 90% while guaranteeing convergence. Integrates with PyTorch and Flower. Maintained with automated GitHub Actions CI/CD workflows for testing (pytest), static typing (mypy), and linting (ruff).
+          </p>
+          <div class="pub-links">
+            <a href="https://pypi.org/project/psfed/" target="_blank">
+              <i class="fa-brands fa-python"></i>&nbsp;PyPI
+            </a>
+            <a href="https://github.com/ehsan-lari/psfed" target="_blank">
+              <i class="fa-brands fa-github"></i>&nbsp;GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Chatbot -->
+        <div class="pub-card">
+          <h3>Interactive Portfolio AI Assistant</h3>
+          <div class="meta">
+            <p>Conversational assistant powered by Google Gemini and Vercel serverless functions</p>
+          </div>
+          <p>
+            An interactive AI assistant embedded directly into this website to answer questions about academic background, research publications, and technical skills. Built with a responsive JavaScript interface, a Vercel serverless backend, and Google's Gemini API grounded on a curated CV and portfolio knowledge base.
+          </p>
+          <div class="pub-links">
+            <a href="javascript:void(0)" id="open-chat-card-btn">
+              <i class="fa-solid fa-comment-dots"></i>&nbsp;Open Chat
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
 	<!-- ========== PHD THESIS SECTION ========== -->
     <section id="publications" class="card">
       <h2>PhD Thesis</h2>

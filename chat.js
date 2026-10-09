@@ -96,6 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
   fab.addEventListener('click', toggleChat);
   closeBtn.addEventListener('click', toggleChat);
 
+  const cardChatBtn = document.getElementById('open-chat-card-btn');
+  if (cardChatBtn) {
+    cardChatBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (!chatWindow.classList.contains('open')) {
+        toggleChat();
+      } else {
+        input.focus();
+      }
+    });
+  }
+
   // Add Message to UI
   function addMessage(text, sender) {
     const msgDiv = document.createElement('div');
