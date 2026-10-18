@@ -28,7 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="chat-messages" id="chat-messages">
         <!-- Initial Bot Message -->
         <div class="chat-msg bot">
-          Hi! I'm an AI assistant trained on Ehsan's CV and I'm here to help you. What would you like to know about his experience or skills?
+          Hi! I'm an AI assistant trained on Ehsan's CV and I'm here to help you. Ask me a question or choose an option below:
+        </div>
+
+        <!-- Suggested Questions -->
+        <div class="chat-suggestions" id="chat-suggestions">
+          <button type="button" class="chat-suggestion-btn" data-question="What are Ehsan's core technical skills and tech stack?">
+            What are Ehsan's core technical skills and tech stack?
+          </button>
+          <button type="button" class="chat-suggestion-btn" data-question="Why should you hire Ehsan?">
+            Why should you hire Ehsan?
+          </button>
+          <button type="button" class="chat-suggestion-btn" data-question="Summarize Ehsan's PhD research at NTNU?">
+            Summarize Ehsan's PhD research at NTNU?
+          </button>
         </div>
         
         <!-- Typing Indicator -->
@@ -131,6 +144,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const text = input.value.trim();
     if (!text) return;
 
+    // Hide suggestions once a question is submitted
+    const suggestions = document.getElementById('chat-suggestions');
+    if (suggestions) {
+      suggestions.style.display = 'none';
+    }
+
     // 1. Add user message
     addMessage(text, 'user');
     input.value = '';
@@ -170,6 +189,20 @@ document.addEventListener('DOMContentLoaded', () => {
       input.focus();
       scrollToBottom();
     }
+  }
+
+  // Suggested Question Button Click Listener
+  const suggestionsContainer = document.getElementById('chat-suggestions');
+  if (suggestionsContainer) {
+    suggestionsContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.chat-suggestion-btn');
+      if (!btn) return;
+      const question = btn.getAttribute('data-question');
+      if (question) {
+        input.value = question;
+        sendMessage();
+      }
+    });
   }
 
   // Event Listeners for Input

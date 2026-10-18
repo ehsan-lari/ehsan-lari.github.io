@@ -284,6 +284,55 @@ body.dark-mode .chat-msg.bot {
   box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
 }
 
+/* Suggested Questions (Elkjøp Style) */
+.chat-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: -4px 0 6px 0;
+  width: 100%;
+  animation: slideIn 0.3s ease forwards;
+}
+
+.chat-suggestion-btn {
+  background: #111c38;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.chat-suggestion-btn:hover {
+  background: #1c2b54;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(17, 28, 56, 0.25);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.chat-suggestion-btn:active {
+  transform: translateY(0);
+}
+
+body.dark-mode .chat-suggestion-btn {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #f8fafc;
+}
+
+body.dark-mode .chat-suggestion-btn:hover {
+  background: #334155;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
 /* Typing Indicator */
 .typing-indicator {
   display: flex;
