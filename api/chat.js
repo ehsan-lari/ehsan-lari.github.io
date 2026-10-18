@@ -65,7 +65,6 @@ export default async function handler(req, res) {
       systemInstruction: SYSTEM_PROMPT,
       generationConfig: {
         temperature: 0.2,
-	maxOutputTokens: 500,
       }
     });
 
