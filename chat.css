@@ -255,6 +255,7 @@ body.dark-mode .chat-messages::-webkit-scrollbar-thumb {
   animation: slideIn 0.3s ease forwards;
   opacity: 0;
   transform: translateY(10px);
+  scroll-margin-top: 12px;
 }
 
 @keyframes slideIn {

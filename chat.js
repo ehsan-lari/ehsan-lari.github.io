@@ -132,7 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Insert before typing indicator
     messagesContainer.insertBefore(msgDiv, typingIndicator);
-    scrollToBottom();
+
+    if (sender === 'bot') {
+      msgDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      scrollToBottom();
+    }
   }
 
   function scrollToBottom() {
@@ -186,8 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
       typingIndicator.classList.remove('active');
       sendBtn.disabled = false;
       input.disabled = false;
-      input.focus();
-      scrollToBottom();
+      input.focus({ preventScroll: true });
     }
   }
 
