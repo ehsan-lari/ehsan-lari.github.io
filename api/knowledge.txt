@@ -1,241 +1,318 @@
-﻿
-
-    colorlinks=true,
-    linkcolor=blue!70!black,
-    filecolor=magenta,
-    urlcolor=blue!70!black,
-    citecolor=blue!70!black,
-}
-
-
-
-    {\LARGE \textbf{Ehsan Lari, Ph.D.}} \\[6pt]
-    Department of Electronic Systems, NTNU, Trondheim, Norway \\[4pt]
-    +47~92566819 \textbar\ 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    Implemented a privacy-preserving federated learning pipeline for multi-institutional chest X-ray classification using PyTorch and the Flower FL framework. 
-
-    Developed PRISM-FCP, a distributed, non-parametric conformal prediction framework that yields mathematically calibrated prediction intervals for neural networks and regression models. 
-
-    Proposed coordinate-descent and partial model sharing frameworks to secure online federated learning against adversarial attacks and corrupted data sources. 
-
-    Integrated homomorphic encryption (Paillier cryptosystem) with distributed Nonnegative Matrix Factorization (NMF) to keep local data factors private during collaborative optimization. 
-
-    Formulated ADMM-based federated optimization algorithms that guarantee convergence under noisy and bandwidth-constrained communication links. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    Professor, Department of Electronic Systems, NTNU, Trondheim, Norway \\
-    Email: \href{mailto:stefan.werner@ntnu.no}{stefan.werner@ntnu.no}
-    
-    Senior Research Scientist, CSIRO, Brisbane, Australia \\
-    Email: \href{mailto:reza.arablouei@csiro.au}{reza.arablouei@csiro.au}
-
-    Associate Professor, SDU, Odense, Denmark \\
-    Email: \href{mailto:vigo@sdu.dk}{vigo@sdu.dk}
-
-
-
-
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=blue,
-    citecolor=blue,
-}
-
-
-}
-
-
-
-    {\LARGE \textbf{Ehsan Lari, Ph.D.}} \\[4pt]
-    Trondheim (open to Asker) \cvsep
-    +47~92566819 \cvsep
-
-
-implementation in FPGA and embedded hardware. 6+ years of technical delivery, PhD from NTNU,
-grounded in communication systems and distributed sensor networks.
-
-
-
-
-          implementation, and reproducible validation under realistic noisy and distributed signal conditions.
-          in MATLAB with an HDL-oriented architecture, directly transferable to FPGA implementation.
-          benchmarking and iterative refinement; results published in 9 peer-reviewed outputs.
-
-          and Digital System Design with Verilog labs across 500+ students.
-          supervised MSc students on embedded and DSP projects with emphasis on structured verification.
-
-
-Designed an iterative WLS estimator with explicit communication and resource constraints; convergence
-analysis addresses noise sensitivity and bias-variance tradeoffs that arise in any fixed-point or
-embedded DSP pipeline.
-
-Derived stability and accuracy bounds for consensus-based signal averaging when links carry additive
-noise; maps directly to multi-node sensor fusion and distributed signal aggregation in embedded systems.
-
-
-
-
-English (fluent) \cvsep Norwegian Bokm\aa l (B2) \cvsep Persian (Native)
-
-
-
-
-
-
-
-
-
-
-
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-
-    {#1 \vspace{0pt}}
-  }
-}
-
-        {#1 #2 #3 #4 \vspace{-2pt}}
-  }
-}
-
-}
-
-}
-
-      #1 & \textbf{#2}\\
-}
-
-
-
-
-
-
-
-  {\Huge \scshape Ehsan Lari, Ph.D.} \\ \vspace{4pt}
-  {\Large DevOps \& Data Engineer $\vert$ Python Automation $\vert$ Linux \& CI/CD} \\ \vspace{4pt}
-  Trondheim, Norway~~$\cdot$~~Open to relocating to Oslo \\ \vspace{4pt}
-
-
-
-{\textbf{PSFed: Open-Source Python Package \& CI/CD Automation} (PyPI \& GitHub)}{2022 -- Present}
-
-{\textbf{Automated Data \& Process Pipelines}}{2020 -- 2025}
-
-{\textbf{Cloud \& Database Training} (DataCamp Certifications)}{2024 -- 2025}
-
-
-
-{R\&D Engineer / PhD Researcher}{2020 -- 2025}
-{Norwegian University of Science and Technology (NTNU)}{Trondheim, Norway}
-
-{Lab Instructor \& Teaching Assistant}{2016 -- 2023}
-{NTNU \& Amirkabir University of Technology}{Trondheim / Tehran}
-
-
-
-{Norwegian University of Science and Technology (NTNU)}{2020 -- 2025}
-{PhD in Electrical Engineering (Signal Processing, Control, Machine Learning)}{Trondheim, Norway}
-
-{Amirkabir University of Technology (Tehran Polytechnic)}{2012 -- 2018}
-{MSc + BSc in Electrical Engineering (Electronics, Communications)}{Tehran, Iran}
-
-
-
-
-    colorlinks=true,
-    linkcolor=blue!70!black,
-    urlcolor=blue!70!black,
-}
-
-
-
-    Trondheim, \today
-
-
-
-
-Dear Selection Committee,
-
-A recurring lesson during my PhD in statistical machine learning at NTNU was that building a fast, accurate algorithm in the lab is only half the battle. When I began applying these methods to medical image classification, the real hurdles became clear: clinical data is messy, hospitals cannot legally pool their patient records, and physicians rightfully refuse to trust a black-box model that guesses blindly when it encounters an edge case. These are the exact bottlenecks preventing the clinical adoption of AI in echocardiography today. 
-
-To solve the data-sharing problem, I develop robust federated learning systems that train deep learning models across multiple institutions without ever moving the underlying patient data. More importantly, to solve the trust problem, I build these systems using conformal prediction. Instead of outputting a simple point prediction, my models output a calibrated confidence interval. For the ProCardio initiative, this translates directly to a practical workflow: we can train longitudinal cardiac models across NTNU and Oslo University Hospital without privacy hurdles, and deploy an AI that handles routine measurements confidently while automatically flagging ambiguous cases for the cardiologist's review. 
-
-I am applying because my technical background is built specifically to bridge the gap between theoretical machine learning and safe, deployable clinical tools. I would appreciate the opportunity to sit down with your team to discuss how my expertise in distributed optimization and uncertainty quantification can help turn your 150,000-patient dataset into reliable decision support tools for the clinic.
-
-Best regards, \\
-Trondheim, Norway \\
-+47~92566819 \\
-
-
-%==============================================================
-\section*{Software Projects and Scientific Tools}
-
-\subsection*{NorwayTravelGuide (Live Meteorological Data & Routing System)}
-URL: https://norway-travel-guide.vercel.app
-Repository: https://github.com/ehsan-lari/NorwayTravelGuide
-Tech Stack: FastAPI, React, MET Norway REST APIs, Entur APIs, Google Gemini AI, Vercel
-\begin{itemize}
-    \item Implemented a FastAPI web service and React frontend providing weather-informed travel guidance across Norway.
-    \item Built automated data ingestion pipelines consuming live meteorological forecast streams from MET Norway REST APIs and transit routing from Entur.
-    \item Applied schema validation, missing-data imputation, and multi-criteria scoring algorithms.
-    \item Integrated Google Gemini AI to generate customized destination summaries based on season, weather conditions, and travel preferences.
-\end{itemize}
-
-\subsection*{PSFed: Distributed Learning and Model Sharing Framework}
-PyPI: https://pypi.org/project/psfed/
-Repository: https://github.com/ehsan-lari/psfed
-Tech Stack: Python, PyTorch, Flower, GitHub Actions, pytest, mypy, ruff
-\begin{itemize}
-    \item Architected, packaged, and published an open-source Python library on PyPI for distributed estimation and selective parameter sharing.
-    \item Designed partial model sharing algorithms that cut per-cycle network data transfer by 50% to 90% while maintaining convergence guarantees.
-    \item Compatible as a modular plug-in with PyTorch and Flower federated learning pipelines.
-    \item Enforced software quality with automated GitHub Actions CI/CD workflows: automated unit testing (pytest), strict static typing (mypy), and linting (ruff).
-\end{itemize}
-
-\subsection*{Interactive Portfolio AI Assistant}
-URL: https://ehsan-lari.github.io
-Tech Stack: JavaScript, CSS, Node.js, Vercel Serverless Functions, Google Gemini API
-\begin{itemize}
-    \item Built and deployed a conversational AI assistant on this personal website to address inquiries from recruiters and visitors.
-    \item Developed a lightweight, responsive client interface with animated typing indicators and real-time state management.
-    \item Engineered a serverless backend using Vercel functions and the Google Gemini API grounded on a curated corpus of publications, CVs, and technical portfolios.
-\end{itemize}
+# KNOWLEDGE BASE: EHSAN (ETHAN) LARI, PH.D.
+
+================================================================================
+1. BASIC INFORMATION & CURRENT STATUS
+================================================================================
+- Full Name: Ehsan Lari (also goes by Ethan)
+- Academic Title: Ph.D. in Electrical Engineering
+- Current Location: Trondheim, Norway
+- Work Authorization: Permanent Resident in Norway (6.5+ years continuous residence).
+  Full legal right to work in Norway without visa sponsorship.
+- Availability: Available immediately (zero notice period).
+- Relocation: Open to relocating anywhere in Norway (Oslo, Bergen, Stavanger, Asker, Kongsberg)
+  and open to remote or hybrid positions.
+- Driving Licence: Valid Norwegian driving licence (Class B).
+- Contact Information:
+  * Phone: +47 92566819
+  * Primary Email: ehsanl@alumni.ntnu.no
+  * Alternative Email: ehsanlari1387@gmail.com
+  * Personal Website: https://ehsan-lari.github.io
+  * GitHub: https://github.com/ehsan-lari
+  * LinkedIn: https://www.linkedin.com/in/ehsanlari/
+  * Google Scholar: https://scholar.google.com/citations?hl=en&user=koESvS4AAAAJ
+
+================================================================================
+2. PROFESSIONAL PROFILE & CORE COMPETENCIES
+================================================================================
+Ehsan is a Machine Learning and Signal Processing Engineer with a Ph.D. from NTNU.
+His work combines statistical signal processing, mathematical optimization, and machine learning.
+He specializes in:
+- Conformal prediction: distribution-free uncertainty quantification for neural networks.
+- Distributed optimization: ADMM, consensus algorithms, convergence proofs under noisy channels.
+- Federated learning: partial model sharing, communication compression, Byzantine resilience.
+- Signal processing: sensor arrays, spatial beamforming, source localization, adaptive filtering.
+- Software delivery: published open-source Python packages (PSFed on PyPI), CI/CD pipelines,
+  cloud-deployed REST services (FastAPI), and embedded hardware verification.
+
+================================================================================
+3. EDUCATION
+================================================================================
+- Doctor of Philosophy (Ph.D.) in Electrical Engineering
+  * Institution: Norwegian University of Science and Technology (NTNU), Trondheim, Norway
+  * Period: 2020 – 2025
+  * Department: Department of Electronic Systems (IES)
+  * Dissertation Title: "Distributed Learning with Enhanced Efficiency, Robustness, and Privacy"
+  * Main Supervisor: Prof. Stefan Werner (NTNU, Norway)
+  * Co-Supervisor: Dr. Reza Arablouei (CSIRO, Brisbane, Australia)
+  * Focus: Distributed optimization, federated learning, Byzantine fault tolerance,
+    adversarial robustness, conformal prediction, and privacy-preserving distributed matrix factorization.
+  * Formal Pedagogy: Completed IDT8001 (Didactics in Higher Education) at NTNU,
+    fulfilling requirements for basic university pedagogical competence.
+
+- Master of Science (M.Sc.) in Electrical Engineering
+  * Institution: Amirkabir University of Technology (Tehran Polytechnic), Tehran, Iran
+  * Period: 2016 – 2018
+  * Specialization: Telecommunications, Phased Arrays, Electromagnetic Fields and Waves
+  * Academic Standing: Granted direct admission to M.Sc. without the national university
+    entrance exam based on top academic performance during undergraduate studies.
+
+- Bachelor of Science (B.Sc.) in Electrical Engineering
+  * Institution: Amirkabir University of Technology (Tehran Polytechnic), Tehran, Iran
+  * Period: 2012 – 2016
+  * Specialization: Dual degree in Electronics Engineering and Telecommunications Engineering.
+  * National University Entrance Exam (Konkur): Ranked 300 out of ~250,000 engineering candidates
+    nationwide in 2012 (top 0.1%).
+
+================================================================================
+4. WORK & RESEARCH EXPERIENCE
+================================================================================
+- Researcher / Ph.D. Candidate
+  Department of Electronic Systems, NTNU, Trondheim, Norway
+  Period: 2020 – 2026
+  Key Contributions:
+  * Formulated ADMM-based distributed optimization algorithms for estimation over noisy links.
+    Proved mathematical convergence under packet loss and channel noise. Achieved 25% lower
+    estimation error compared to distributed baselines.
+  * Designed coordinate-descent parameter masking and partial model sharing for federated learning.
+    Reduced per-round network communication volume by 50% to 90% while preserving convergence.
+  * Developed PRISM-FCP, a federated conformal prediction framework. Proved finite-sample
+    distribution-free coverage guarantees for neural network prediction intervals under data
+    heterogeneity and distribution shift.
+  * Engineered defenses against model poisoning and Byzantine attacks in collaborative networks.
+    Derived theoretical resilience bounds.
+  * Formulated privacy-preserving distributed Nonnegative Matrix Factorization (NMF) combining
+    Paillier homomorphic encryption with decentralized optimization.
+  * Authored 10 peer-reviewed journal and conference publications.
+  * Managed research deliverables across an international consortium: NTNU (Norway), CSIRO (Australia),
+    SDU (Denmark), Linköping University (Sweden), and UBC (Canada).
+  * Served as Project Manager for an NFR FRIPRO Researcher Project with International Mobility proposal (2025).
+
+- Researcher in Signal Processing & High-Frequency Simulation
+  Amirkabir University of Technology (AUT), Tehran, Iran
+  Period: 2018 – 2020
+  Key Contributions:
+  * Developed beamforming algorithms in MATLAB to increase bandwidth for phase-shifters in Ku-band
+    phased-array antennas, verified against physical laboratory measurements.
+  * Built numerical solvers in C/C++ and MATLAB for multi-dimensional partial differential equations (PDEs),
+    modeling electromagnetic wave propagation and transient responses.
+  * Conducted RF lab measurements using vector network analyzers (VNAs), oscilloscopes, and spectrum analyzers.
+
+- Teaching Assistant, Lab Instructor & Academic Mentor
+  NTNU (Norway) and Amirkabir University of Technology (Iran)
+  Period: 2016 – 2023
+  Key Contributions:
+  * Received formal institutional offer for an Assistant Professor position at NTNU in 2022 to teach
+    Digital Design (TFE4152).
+  * Supervised 5 master's thesis projects in digital design and signal processing to 100% on-time completion.
+  * Taught and assisted across 10 university courses covering:
+    - Digital Signal Processing (TTT4120, NTNU, 2020–2023)
+    - Design of Integrated Circuits / Digital System Design with VHDL/Verilog (TFE4152, NTNU, 2020–2023)
+    - Estimation, Detection and Classification (TTT4275, NTNU, 2021)
+    - Communication Systems, Engineering Mathematics, Probability & Statistics, Circuits Lab (AUT, 2016–2018)
+  * Mentored over 500 students in total across laboratory sessions, code reviews, and project supervision.
+
+================================================================================
+5. SOFTWARE ARTIFACTS & TECHNICAL PROJECTS
+================================================================================
+- PSFed: Distributed Learning and Model Sharing Framework
+  * PyPI: https://pypi.org/project/psfed/
+  * GitHub: https://github.com/ehsan-lari/psfed
+  * Tech Stack: Python, PyTorch, Flower FL, NumPy, GitHub Actions, pytest, mypy, ruff.
+  * Details: Open-source Python library for distributed estimation and selective parameter sharing.
+    Cuts per-round communication data volume by 50% to 90% while guaranteeing convergence.
+    Maintains automated CI/CD workflows for testing (pytest), static typing (mypy), and linting (ruff).
+    Presented at the Flower Monthly Seminar in January 2026 (recording available on YouTube).
+
+- PRISM-FCP: Byzantine-Resilient Federated Conformal Prediction
+  * Tech Stack: Python, PyTorch, NumPy.
+  * Details: Conformal prediction engine attaching mathematically calibrated, finite-sample prediction
+    intervals to deep neural networks. Maintains valid coverage under adversarial model poisoning and
+    non-identical client data distributions.
+
+- NorwayTravelGuide: Live Meteorological & Transit Routing Platform
+  * Live URL: https://norway-travel-guide.vercel.app
+  * GitHub: https://github.com/ehsan-lari/NorwayTravelGuide
+  * Tech Stack: FastAPI, React, MET Norway REST APIs, Entur APIs, Google Gemini AI, Vercel.
+  * Details: Full-stack cloud service providing weather-informed travel recommendations across Norway.
+    Consumes live meteorological streams from MET Norway and transit schedules from Entur. Implements
+    data validation, missing-value imputation, multi-criteria scoring models, and Gemini AI destination summaries.
+
+- Interactive Portfolio AI Assistant
+  * Live URL: https://ehsan-lari.github.io
+  * Tech Stack: JavaScript, Node.js, Vercel Serverless Functions, Google Gemini API.
+  * Details: Grounded conversational assistant deployed on personal portfolio to answer questions
+    from recruiters and collaborators.
+
+================================================================================
+6. COMPLETE PUBLICATIONS RECORD
+================================================================================
+Peer-Reviewed Journal Articles:
+1. E. Lari, R. Arablouei, and S. Werner,
+   "Communication-Efficient Byzantine-Robust Federated Conformal Prediction via Partial Sharing",
+   IEEE Transactions on Signal Processing, 2026.
+   Link: https://ieeexplore.ieee.org/document/11704544
+
+2. E. Lari, R. Arablouei, V. C. Gogineni, and S. Werner,
+   "Resilience in Online Federated Learning: Mitigating Model-Poisoning Attacks via Partial Sharing",
+   IEEE Transactions on Signal and Information Processing over Networks (TSIPN), vol. 11, pp. 245–258, 2025.
+   Link: https://ieeexplore.ieee.org/document/10969081
+
+3. E. Lari, R. Arablouei, V. C. Gogineni, and S. Werner,
+   "Noise-Robust and Resource-Efficient ADMM-Based Federated Learning for WLS Regression",
+   Elsevier Signal Processing, vol. 228, p. 109745, 2025.
+   Link: https://www.sciencedirect.com/science/article/pii/S0165168425005031
+
+Peer-Reviewed Conference Papers:
+4. E. Lari, R. Arablouei, and S. Werner,
+   "Partial Model Sharing Improves Byzantine Resilience in Federated Conformal Prediction",
+   European Signal Processing Conference (EUSIPCO), 2026.
+   Preprint: https://arxiv.org/abs/2605.11684
+
+5. E. Lari, R. Arablouei, and S. Werner,
+   "Privacy-Preserving Distributed Nonnegative Matrix Factorization",
+   European Signal Processing Conference (EUSIPCO), 2024.
+   Link: https://ieeexplore.ieee.org/document/10715358/
+
+6. E. Lari, R. Arablouei, N. K. D. Venkategowda, and S. Werner,
+   "Distributed Maximum Consensus over Noisy Links",
+   European Signal Processing Conference (EUSIPCO), 2024.
+   Link: https://ieeexplore.ieee.org/document/10715478/
+
+7. E. Lari, V. C. Gogineni, R. Arablouei, and S. Werner,
+   "On the Resilience of Online Federated Learning to Model Poisoning Attacks Through Partial Sharing",
+   IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024.
+   Link: https://ieeexplore.ieee.org/document/10447497/
+
+8. E. Lari, V. C. Gogineni, R. Arablouei, and S. Werner,
+   "Continual Local Updates for Federated Learning with Enhanced Robustness to Link Noise",
+   Asia-Pacific Signal and Information Processing Association Annual Summit and Conference (APSIPA ASC), 2023.
+   Link: https://ieeexplore.ieee.org/document/10317446/
+
+9. E. Lari, V. C. Gogineni, R. Arablouei, and S. Werner,
+   "Resource-Efficient Federated Learning Robust to Communication Errors",
+   IEEE Statistical Signal Processing Workshop (SSP), 2023.
+   Link: https://ieeexplore.ieee.org/document/10208024/
+
+Under Review Manuscripts:
+10. E. Lari et al.,
+    "Privacy in Federated Learning: Exposure, Guarantees, and Composition",
+    Submitted to Transactions on Machine Learning Research (TMLR), 2026.
+
+PhD Dissertation:
+11. E. Lari,
+    "Distributed Learning with Enhanced Efficiency, Robustness, and Privacy",
+    Department of Electronic Systems, NTNU, 2025.
+    PDF: https://ehsan-lari.github.io/files/EhsanLari_2025_PhD.pdf
+
+================================================================================
+7. TECHNICAL SKILLS INVENTORY
+================================================================================
+- Machine Learning & Statistics:
+  * Frameworks: PyTorch, scikit-learn, Flower FL framework.
+  * Methods: Conformal prediction, uncertainty quantification, distributed optimization (ADMM),
+    federated learning, convolutional neural networks (CNNs, DenseNet), time-series forecasting,
+    anomaly detection, statistical hypothesis testing, Bayesian inference.
+- Signal Processing:
+  * Detection and estimation theory, weighted least-squares (WLS), consensus protocols,
+    sensor array processing, spatial beamforming, direction of arrival (DOA), adaptive filtering,
+    spectral time-frequency analysis, wave propagation modeling, OFDM.
+- Programming & Scripting:
+  * Python (NumPy, SciPy, pandas, Matplotlib, PyTorch, FastAPI)
+  * MATLAB & Simulink
+  * C and C++ (numerical solvers, systems programming, PDE simulation)
+  * SQL (query design, schema validation, data transformation)
+  * Linux / Bash shell scripting
+- Hardware & Systems Design:
+  * SystemVerilog, Verilog, VHDL, ModelSim, RTL simulation and synthesis.
+  * Embedded Linux on Raspberry Pi, GPIO sensor/actuator interfacing.
+  * RF and laboratory bench instrumentation: oscilloscopes, vector network analyzers (VNAs), spectrum analyzers.
+- Software Engineering & DevOps:
+  * Git, GitHub Actions (CI/CD automation), Docker, Linux environments.
+  * PyPI packaging, unit testing (pytest), static type checking (mypy), linting (ruff).
+  * REST API development (FastAPI), serverless deployment (Vercel).
+
+================================================================================
+8. CERTIFICATIONS & SPECIALIZED TRAINING
+================================================================================
+- DataCamp Certifications (2024 – 2025):
+  * Data Engineering with Python: data ingestion, ETL pipelines, warehousing concepts.
+  * Azure Cloud Architecture: cloud infrastructure, storage, scalability.
+  * SQL: query optimization, relational database schema design.
+- Hands-on Supercomputer Workshop:
+  * Completed "Hands-on Training with HPC: Scalable Plant Phenotyping with Supercomputers"
+    at NTNU Gjøvik (PheNo infrastructure, May 2026). Covered Slurm job scheduling, parallel workflows,
+    and scalable AI pipelines.
+- Probabilistic AI Summer School at NTNU:
+  * Covered Bayesian modeling and probabilistic programming with Pyro and PyTorch.
+- Formal Pedagogical Qualification:
+  * IDT8001 Didactics in Higher Education at NTNU (university pedagogical qualification).
+
+================================================================================
+9. LANGUAGES
+================================================================================
+- English: Fluent (working, academic, and publishing language).
+- Norwegian (Bokmål): Professional working proficiency (B1/B2 level, 6.5+ years living in Norway,
+  comfortable with workplace discussions, actively progressing).
+- Persian (Farsi): Native language.
+
+================================================================================
+10. PROFESSIONAL REFERENCES
+================================================================================
+- Prof. Stefan Werner
+  Position: Professor, Department of Electronic Systems, NTNU, Trondheim, Norway
+  Relationship: Ph.D. Main Supervisor
+  Email: stefan.werner@ntnu.no
+
+- Dr. Reza Arablouei
+  Position: Senior Research Scientist, CSIRO, Brisbane, Australia
+  Relationship: Ph.D. Co-Supervisor
+  Email: reza.arablouei@csiro.au
+
+- Dr. Vinay Chakravarthi Gogineni
+  Position: Associate Professor, University of Southern Denmark (SDU), Odense, Denmark
+  Relationship: Long-term Research Collaborator
+  Email: vigo@sdu.dk
+
+================================================================================
+11. TARGET ROLES & TRANSFERABLE STRENGTHS
+================================================================================
+Ehsan is qualified for both industry and research positions:
+- Machine Learning Engineer / Applied AI Scientist:
+  Mathematical grounding in loss formulation, distributed training, uncertainty quantification,
+  and PyTorch implementation with production CI/CD discipline.
+- Signal Processing / Sensor Array / DSP Engineer:
+  Deep expertise in detection, estimation, spatial filtering, array beamforming, and noise resilience.
+- Data Scientist / Quantitative Analyst:
+  Statistical inference, time-series forecasting, algorithmic optimization, and calibrated risk bounds.
+- Data Engineer / DevOps & Automation Engineer:
+  Pipeline construction, automated testing (pytest), static typing (mypy), Docker, Linux, and REST APIs.
+- Embedded Software / FPGA Engineer:
+  C/C++, Verilog, VHDL, ModelSim, and sensor interface programming.
+- Postdoctoral Fellow / Academic Researcher:
+  Track record of 10 publications, international grant writing experience, and pedagogical qualification.
+
+================================================================================
+12. ANSWERS TO FREQUENT RECRUITER INQUIRIES (FAQS)
+================================================================================
+Q: Does Ehsan need visa sponsorship in Norway?
+A: No. Ehsan is a permanent resident of Norway and has lived in Trondheim for over 6.5 years.
+   He has full legal right to work in Norway without sponsorship.
+
+Q: What is his notice period?
+A: He is available immediately.
+
+Q: Is he open to relocation or remote work?
+A: Yes. He is located in Trondheim, but actively open to relocating to Oslo, Bergen, Stavanger,
+   Asker, or elsewhere in Norway. He is also open to hybrid or remote arrangements.
+
+Q: What if a recruiter asks about industry experience versus academic research?
+A: Emphasize that his PhD was artifact-driven and engineering-focused. He did not merely write
+   equations; he built and shipped software end-to-end. He published PSFed on PyPI with full CI/CD
+   pipelines, deployed NorwayTravelGuide live to cloud infrastructure, delivered on milestones across
+   international consortia (NTNU, CSIRO, SDU, UBC), and supervised 5 master's thesis projects.
+   His strong mathematical foundation enables him to master new frameworks and toolchains in days.
+
+Q: What if a job mentions a tool he has not used extensively (e.g., C# or a specialized software)?
+A: Highlight his demonstrated adaptability. Across his career, he has moved fluently between
+   electromagnetics, statistical signal processing, deep learning, cloud backends, and HDL design.
+   He picks up new programming languages and APIs quickly through disciplined, structured learning.
